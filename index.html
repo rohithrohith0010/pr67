@@ -6,14 +6,14 @@
 <title>PR’67 Visual Production — Videography & Video Editing</title>
 <meta name="description" content="PR’67 Visual Production — professional videography, video editing and cinematic storytelling for social media.">
 <meta name="theme-color" content="#FFB84D">
-<link rel="icon" href="assets/favicon.png">
+<link rel="icon" href="assets/LOGO OF PR.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --logo:url(assets/logo.png);
+  --logo:url(assets/LOGO OF PR.png);
   --orange:#FFB84D;
   --orange-deep:#F59E1B;
   --orange-soft:#FFE2B0;
@@ -192,9 +192,9 @@ header.hide{transform:translateY(-130%)}
 /* lightbox */
 .lb{position:fixed;inset:0;background:rgba(15,13,10,.92);z-index:400;display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
 .lb.open{opacity:1;visibility:visible}
-.lb-box{width:min(960px,100%);background:var(--orange);border:2px solid var(--ink);border-radius:30px;padding:22px;transform:scale(.92) translateY(20px);transition:transform .45s var(--ease)}
+.lb-box{width:min(960px,100%,calc((100vh - 180px)*var(--vr,1.7778) + 44px));background:var(--orange);border:2px solid var(--ink);border-radius:30px;padding:22px;transform:scale(.92) translateY(20px);transition:transform .45s var(--ease)}
 .lb.open .lb-box{transform:none}
-.lb-screen{aspect-ratio:16/9;border-radius:18px;background:var(--ink);display:grid;place-items:center;overflow:hidden;color:var(--orange);text-align:center}
+.lb-screen{aspect-ratio:var(--vr,1.7778);border-radius:18px;background:var(--ink);display:grid;place-items:center;overflow:hidden;color:var(--orange);text-align:center}
 .lb-screen video,.lb-screen iframe{width:100%;height:100%;border:0}
 .lb-screen .empty{padding:20px}
 .lb-screen .empty svg{width:56px;margin:0 auto 14px}
@@ -308,7 +308,7 @@ footer{background:var(--ink);color:var(--cream);padding:0 0 34px}
 <header id="header">
   <nav class="nav">
     <a href="#home" class="logo" aria-label="PR’67 home">
-      <span class="mark"><img alt="" src="assets/logo-small.png"></span>
+      <span class="mark"><img alt="" src="assets/LOGO OF PR.png"></span>
       PR’67
     </a>
     <div class="links" id="links">
@@ -347,7 +347,7 @@ footer{background:var(--ink);color:var(--cream);padding:0 0 34px}
     <div class="badge-wrap">
       <div class="rec"><i></i> REC · PR’67</div>
       <svg class="ring" viewBox="0 0 400 400" aria-hidden="true"><defs><path id="circ" d="M200,200 m-170,0 a170,170 0 1,1 340,0 a170,170 0 1,1 -340,0"/></defs><text><textPath href="#circ" textLength="1060" lengthAdjust="spacing">VIDEOGRAPHY ✦ VIDEO EDITING ✦ STORYTELLING ✦ COLOUR GRADING ✦</textPath></text></svg>
-      <div class="disc"><img class="logo-img" alt="PR’67 logo" src="assets/logo.png"></div>
+      <div class="disc"><img class="logo-img" alt="PR’67 logo" src="assets/LOGO OF PR.png"></div>
       <div class="float-card"><b data-count="15">0</b>Projects in<br>the gallery</div>
     </div>
   </div>
@@ -429,10 +429,10 @@ footer{background:var(--ink);color:var(--cream);padding:0 0 34px}
 <!-- WHY -->
 <section class="why" id="why">
   <div class="wrap why-grid">
-    <div class="why-visual rv"><img alt="PR’67 logo" src="assets/logo.png"></div>
+    <div class="why-visual rv"><img alt="PR’67 logo" src="assets/LOGO OF PR.png"></div>
     <div class="why-copy rv" style="--d:.15s">
       <span class="eyebrow">06 — Why Choose Me?</span>
-      <p>I am a Videographer and Video Editor dedicated to transforming raw footage into visually compelling narratives.</p>
+      <p>I am a Videographer and Video Editor specializing in mobile videography, capturing creative visuals and transforming raw footage into compelling stories..</p>
       <p>Specializing in cinematic visuals and creative storytelling, I combine technical precision with a strong eye for composition, lighting, and seamless transitions.</p>
       <p>My focus is on producing high-quality video content that deeply connects with audiences and delivers a powerful visual impact.</p>
       <ul class="checks"><li>Technical precision</li><li>Strong eye for composition &amp; lighting</li><li>Seamless transitions &amp; storytelling</li></ul>
@@ -511,12 +511,17 @@ const PROJECTS = [
   { title: "Rishi Events", desc: "Event Highlights", video: "assets/Rishi events.mp4", thumb: "" }
 ];
    ============================================================ */
-const PROJECTS = Array.from({length:15},(_,i)=>({
-  title:"Project "+String(i+1).padStart(2,"0"),
-  desc:"Add title, description & video",
-  video:"",
-  thumb:""
-}));
+const PROJECTS = [
+  { title: "INTERSTELLAR", desc: "Cinematic view here",  video: "assets/INTERSTELLAR.mp4", thumb: "", ratio: "9:16" },
+  { title: "Love Story",   desc: "Romantic Cinematic Film", video: "assets/Love story.mp4", thumb: "", ratio: "9:16" },
+  { title: "Complex event",   desc: "Complex event", video: "assets/Rishi events.mp4", thumb: "", ratio: "9:16" },
+  { title: "Duke",         desc: "Duke Cinematic Video", video: "assets/Duke.mp4",         thumb: "", ratio: "9:16" },
+  { title: "Family car",   desc: "Memorable family movement", video: "assets/Car delivery 02.mp4", thumb: "", ratio: "9:16" },
+  { title: "Lovable family car",   desc: "Memorable family movement", video: "assets/Car delivery.mp4", thumb: "", ratio: "9:16" },
+  { title: "Kanmaniye",    desc: "Cinematic Storytelling", video: "assets/Kanmaniye.mp4",  thumb: "", ratio: "9:16" },
+  { title: "Engagement",   desc: "Engagement Cinematic", video: "assets/Engagement.mp4",   thumb: "", ratio: "9:16" },
+  { title: "Joyful kids",   desc: "joyful kids event", video: "assets/Hello kidz.mp4", thumb: "", ratio: "9:16" }
+];
 /* Example:
 PROJECTS[0] = {title:"Brand Reel", desc:"Cinematic social media video", video:"videos/reel.mp4", thumb:"images/reel.jpg"};
 */
@@ -525,7 +530,7 @@ const SKILLS = [
   ["Cinematography","i-cam"],["Video Editing","i-cut"],["Colour Correction & Grading","i-palette"],["Audio Synchronization","i-wave"],
   ["Sound Design","i-music"],["Visual Storytelling","i-book"],["Camera Handling","i-hand"],["Motion Graphics","i-motion"]
 ];
-const TOOLS = [["DaVinci Resolve","Dv"],["Adobe Premiere Pro","Pr"],["Adobe After Effects","Ae"],["CapCut","Cc"],["Affinity","Af"]];
+const TOOLS = [["DaVinci Resolve","Dr"],["Adobe Premiere Pro","Pr"],["Adobe After Effects","Ae"],["CapCut","Cc"],["Adobe Photo Shop","Ps"],["Adobe Light Room","Lr"],["Affinity","A"]];
 const MARQUEE = ["Videography","Video Editing","Cinematic Storytelling","Colour Grading","Sound Design","Motion Graphics","Social Media Video"];
 const GRADS = [
   "linear-gradient(135deg,#FFB84D,#F08A00)","linear-gradient(135deg,#FFD08A,#FF9E2C)","linear-gradient(135deg,#F59E1B,#B85C00)",
@@ -551,6 +556,7 @@ $("#gallery").innerHTML = PROJECTS.map((p,i)=>`
 /* lightbox */
 let cur = 0;
 const lb=$("#lb"), screen=$("#lbScreen");
+function setRatio(r){$("#lb .lb-box").style.setProperty("--vr",r)}
 function show(i){
   cur=(i+PROJECTS.length)%PROJECTS.length;
   const p=PROJECTS[cur];
@@ -561,6 +567,7 @@ function show(i){
     screen.innerHTML=`<iframe src="${p.video}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="${p.title}"></iframe>`;
   }else{
     screen.innerHTML=`<video src="${p.video}" controls autoplay playsinline></video>`;
+    screen.firstElementChild.addEventListener("loadedmetadata",e=>{const v=e.target;if(v.videoWidth&&v.videoHeight)setRatio(v.videoWidth/v.videoHeight)});
   }
 }
 function openLb(i){show(i);lb.classList.add("open");document.body.style.overflow="hidden"}
